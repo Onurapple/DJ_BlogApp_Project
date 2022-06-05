@@ -1,0 +1,40 @@
+{% extends 'users/base.html' %} {% block content %}
+<ul class="d-flex">
+  <div
+    class="card mx-auto mt-3"
+    style="width: 50vw; height: 70vh; font-size: 2vw"
+  >
+    <img
+      src="../../../media/{{post.image}}"
+      class="card-img-top"
+      alt="blogpost"
+      style="height: 40vh"
+    />
+    <hr />
+    <div
+      class="card-body overflow-hidden my-0 mx-auto p-0"
+      style="height: 10vh"
+    >
+      <h2 class="card-title">{{ post.title }}</h2>
+      <p class="card-text">{{ post.content }}</p>
+    </div>
+
+    <ul class="list-unstyled mx-auto d-flex">
+      <li class="item m-2"><i class="fa-regular fa-message mr-1"></i>12</li>
+      <li class="item m-2"><i class="fa-solid fa-eye mr-1"></i>545</li>
+      <li class="item m-2"><i class="fa-regular fa-heart mr-1"></i>433</li>
+    </ul>
+    <div class="card-body my-0 mx-auto p-0">
+      <p>Posted 7 months, 1 week ago</p>
+    </div>
+    <div class="card-footer d-flex">
+      <div class="mx-auto">
+        <a class="btn btn-success" href="{% url 'update' post.id %}">
+          Update
+        </a>
+        <a href="{% url 'delete' post.id %}" class="btn btn-danger"> Delete </a>
+      </div>
+    </div>
+  </div>
+</ul>
+{% endblock content %}

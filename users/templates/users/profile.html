@@ -1,0 +1,94 @@
+{% extends 'users/base.html' %} {% block content %}
+<div class="container">
+  <div class="container">
+    <div class="content-section">
+      <div class="media">
+        <img
+          class="rounded-circle account-img"
+          src="../../../media/pictures/dummy_user_man.png"
+        />
+        <div class="media-body">
+          <h2 class="account-heading">ahmett</h2>
+          <p class="text-secondary">ahmett@gmail.com</p>
+        </div>
+      </div>
+      <form action="" method="post" enctype="multipart/form-data">
+        <input
+          type="hidden"
+          name="csrfmiddlewaretoken"
+          value="UhsaoOFL11KfL8TGpO9KMwuGLISPVmPJDb7kwUWeGk62bJCNc92Q4VN0Bn9h5Edh"
+        />
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4">Profile</legend>
+
+          <div id="div_id_username" class="form-group">
+            <label for="id_username" class="requiredField">
+              Username<span class="asteriskField">*</span>
+            </label>
+            <div class="">
+              <input
+                type="text"
+                name="username"
+                value="ahmett"
+                maxlength="150"
+                class="textinput textInput form-control"
+                required
+                id="id_username"
+              />
+              <small id="hint_id_username" class="form-text text-muted"
+                >Required. 150 characters or fewer. Letters, digits and
+                @/./+/-/_ only.</small
+              >
+            </div>
+          </div>
+          <div id="div_id_email" class="form-group">
+            <label for="id_email" class=""> Email address </label>
+            <div class="">
+              <input
+                type="email"
+                name="email"
+                value="ahmett@gmail.com"
+                maxlength="254"
+                class="emailinput form-control"
+                id="id_email"
+              />
+            </div>
+          </div>
+
+          <div id="div_id_image" class="form-group">
+            <label for="id_image" class="requiredField">
+              Image<span class="asteriskField">*</span>
+            </label>
+            <div class="">
+              Currently: <a href="/media/avatar.png">avatar.png</a><br />
+              Change:
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+                class="clearablefileinput form-control-file"
+                id="id_image"
+              />
+            </div>
+          </div>
+          <div id="div_id_bio" class="form-group">
+            <label for="id_bio" class=""> Bio </label>
+            <div class="">
+              <textarea
+                name="bio"
+                cols="40"
+                rows="10"
+                class="textarea form-control"
+                id="id_bio"
+              ></textarea>
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
